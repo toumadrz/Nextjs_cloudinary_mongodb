@@ -5,6 +5,7 @@ import { useSession } from "next-auth/react";
 import { redirect } from "next/navigation";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faRefresh, faSearch } from "@fortawesome/free-solid-svg-icons";
+import Link from "next/link";
 
 function DocumentList() {
   const { data: session } = useSession();
@@ -156,14 +157,13 @@ function DocumentList() {
                         <div className="d-flex justify-content-center">
                           {(session.user.role === "admin" ||
                             doc.emailUploader === session.user.email) && (
-                            <button
+                            <Link href={`/editDoc?id=${doc._id}`}>
+                              <button
                               className="btn btn-outline-primary btn-sm me-2"
-                              onClick={() =>
-                                console.log("View details:", doc.id)
-                              }
                             >
                               แก้ไข
                             </button>
+                            </Link>
                           )}
                           <button
                             className="btn btn-primary btn-sm ms-2"
