@@ -1,0 +1,11 @@
+.navLink:hover{
+    color: #f5c70f !important;
+}
+.navbarBrand:hover{
+    color: #f5c70f !important;
+}
+@media (max-width: 768px) { 
+    .navbarnav {
+      justify-content: end !important; /* ทำให้เมนูชิดขวาในมือถือ */
+    }
+  }
